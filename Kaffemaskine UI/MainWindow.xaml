@@ -1,0 +1,75 @@
+﻿<Window x:Class="Kaffemaskine_UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kaffemaskine_UI"
+        mc:Ignorable="d"
+        
+        Title="MainWindow" Height="1200" Width="1550">
+    <ScrollViewer>
+        <Grid>
+            <Image HorizontalAlignment="Left" Height="768" Margin="12,393,0,0" VerticalAlignment="Top" Width="742" Source="c:\kaffe\kaffe.png"/>
+            <Button x:Name="CoffeeButton" Content="Coffee" HorizontalAlignment="Left" VerticalAlignment="Top" Height="57" Width="57" Margin="516,450,0,0" Click="CoffeeButton_Click"/>
+            <Button x:Name="TeaButton" Content="Tea" HorizontalAlignment="Left" VerticalAlignment="Top" Height="57" Width="57" Margin="416,550,0,0" Click="TeaButton_Click"/>
+            <Button x:Name="EspressoButton" Content="Espresso" HorizontalAlignment="Left" VerticalAlignment="Top" Height="57" Width="57" Margin="516,550,0,0" Click="EspressoButton_Click"/>
+            <Label x:Name="Display" Content="" HorizontalAlignment="Left" Margin="210,467,0,0" VerticalAlignment="Top" Height="122" Width="122" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Button Style="{DynamicResource ButtonNoHover}" x:Name="PowerButtonOff" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Height="67" Width="67" Margin="411,445,0,0" Click="PowerOffButton_Click" ClickMode="Release" BorderBrush="Black" Foreground="Black">
+                <Button.Background>
+                    <ImageBrush ImageSource="c:\kaffe\poweroffbg3.png"></ImageBrush>
+                </Button.Background>
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="67"></Setter>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Style="{DynamicResource ButtonNoHover}" x:Name="PowerButtonOn" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Height="67" Width="67" Margin="412,445,0,0" Click="PowerOnButton_Click" Visibility="Hidden">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="67"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Background>
+                    <ImageBrush ImageSource="c:\kaffe\poweronbg2.png"/>
+                </Button.Background>
+            </Button>
+            <Image x:Name="TeabagString" HorizontalAlignment="Left" Height="150" Margin="376,863,0,0" VerticalAlignment="Top" Width="94" Source="c:\kaffe\teabagStringNoBg.png" Visibility="Hidden"/>
+            <Button Style="{DynamicResource ButtonNoHover}" BorderThickness="0" x:Name="CupNoTea" Content="" Background="Transparent" HorizontalAlignment="Left" Margin="273,863,0,0" VerticalAlignment="Top" Height="198" Width="219" Click="Cup_Click"/>
+            <Button x:Name="Teabags" Style="{DynamicResource ButtonNoHover}" BorderThickness="0" Content="" HorizontalAlignment="Left" Margin="900,10,0,0" VerticalAlignment="Top" Height="323" Width="548" Click="Tea_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="c:\kaffe\teabagsnobg.png"/>
+                </Button.Background>
+            </Button>
+
+            <Button x:Name="Coffee" BorderThickness="0" Style="{DynamicResource ButtonNoHover}" Content="" HorizontalAlignment="Left" Margin="796,397,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.905,-5.259" Height="297" Width="288" Click="Coffee_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="c:\kaffe\coffeenobg.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="Water" BorderThickness="0" Style="{DynamicResource ButtonNoHover}" Content="" HorizontalAlignment="Left" Margin="873,764,0,0" VerticalAlignment="Top" Height="372" Width="430" Click="Water_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="c:\kaffe\waternobg.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="Filter" BorderThickness="0" Style="{DynamicResource ButtonNoHover}" Content="" HorizontalAlignment="Left" Margin="1116,393,0,0" VerticalAlignment="Top" Height="287" Width="374" Click="Filter_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="c:\kaffe\kaffefilternobg.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="RemoveFilter" BorderThickness="0" Style="{DynamicResource ButtonNoHover}" FontSize="36" HorizontalAlignment="Left" Margin="27,0,0,0" VerticalAlignment="Top" Height="385" Width="356" Click="RemoveFilter_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="c:\kaffe\garbagenobg2.png"/>
+                </Button.Background>
+                <TextBlock TextAlignment="Center" Padding="0,50,0,0">
+                Remove filter<LineBreak></LineBreak><LineBreak></LineBreak>Remove espresso<LineBreak></LineBreak>capsule
+                </TextBlock>
+            </Button>
+            <Button x:Name="Espresso" Style="{DynamicResource ButtonNoHover}" BorderThickness="0" Content="" HorizontalAlignment="Left" Margin="497,56,0,0" VerticalAlignment="Top" Height="288" Width="334" Click="Espresso_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="c:\kaffe\espressonobg.png"/>
+                </Button.Background>
+            </Button>
+        </Grid>
+    </ScrollViewer>
+</Window>
